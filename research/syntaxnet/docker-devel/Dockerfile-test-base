@@ -9,7 +9,7 @@ ENV SYNTAXNETDIR=/opt/tensorflow PATH=$PATH:/root/bin
 RUN mkdir -p $SYNTAXNETDIR \
     && cd $SYNTAXNETDIR \
     && apt-get update \
-    && apt-get install -y \
+    && apt-get --no-install-recommends install -y \
           file \
           git \
           graphviz \
