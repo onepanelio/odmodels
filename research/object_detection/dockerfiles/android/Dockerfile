@@ -26,14 +26,14 @@ RUN git clone --depth 1 https://github.com/tensorflow/models.git && \
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
-    apt-get update -y && apt-get install google-cloud-sdk -y
+    apt-get update -y && apt-get --no-install-recommends install google-cloud-sdk -y
 
 
 # Install the Tensorflow Object Detection API from here
 # https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
 # Install object detection api dependencies
-RUN apt-get install -y protobuf-compiler python-pil python-lxml python-tk && \
+RUN apt-get --no-install-recommends install -y protobuf-compiler python-pil python-lxml python-tk && \
     pip install Cython && \
     pip install contextlib2 && \
     pip install jupyter && \
@@ -64,7 +64,7 @@ ENV PYTHONPATH $PYTHONPATH:/tensorflow/models/research:/tensorflow/models/resear
 
 # Install wget (to make life easier below) and editors (to allow people to edit
 # the files inside the container)
-RUN apt-get install -y wget vim emacs nano
+RUN apt-get --no-install-recommends install -y wget vim emacs nano
 
 
 # Grab various data files which are used throughout the demo: dataset,
