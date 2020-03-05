@@ -30,7 +30,7 @@ pip install tensorflow-gpu
 The remaining libraries can be installed on Ubuntu 16.04 using via apt-get:
 
 ``` bash
-sudo apt-get install protobuf-compiler python-pil python-lxml python-tk
+sudo apt-get --no-install-recommends install protobuf-compiler python-pil python-lxml python-tk
 pip install --user Cython
 pip install --user contextlib2
 pip install --user jupyter
