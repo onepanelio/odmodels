@@ -25,7 +25,7 @@ pip install tensorflow-gpu
 The remaining libraries can be installed on Ubuntu 14.04 using via apt-get:
 
 ```bash
-sudo apt-get install python-pil python-numpy
+sudo apt-get --no-install-recommends install python-pil python-numpy
 pip install --user jupyter
 pip install --user matplotlib
 pip install --user PrettyTable
